@@ -29,6 +29,6 @@ define(function() {
         return subClass;
     }
 
-    return inherit;
+    return inherits;
 
 });
