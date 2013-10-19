@@ -4,6 +4,10 @@
 
 ## Usage
 
+通过`edp`引入模块：
+
+    edp import saber-lang
+
 ```javascript
 require( [ 'saber-lang' ], function( lang ) {
     var targetObj = { x: 1, y: 2 };
