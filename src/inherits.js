@@ -24,7 +24,6 @@ define(function() {
             proto[ key ] = selfPrototype[ key ];
         }
         subClass.prototype.constructor = subClass;
-        subClass.superClass = superClass.prototype;
 
         return subClass;
     }
