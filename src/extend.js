@@ -31,7 +31,7 @@ define(function() {
         }
 
         return target;
-    };
+    }
 
     return extend;
 

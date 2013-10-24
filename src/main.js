@@ -11,6 +11,6 @@ define(function( require ) {
         inherits: require( './inherits' ),
         extend: require( './extend' ),
         curry: require( './curry' )
-    }
+    };
 
 });

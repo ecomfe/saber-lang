@@ -38,19 +38,19 @@ define(function( require ) {
         });
 
         it( '.inherits( subClass, superClass )', function() {
-            function func1( name ) {
+            function Func1( name ) {
                 this.name = name;
             }
-            func1.prototype.say = function() {
+            Func1.prototype.say = function() {
                 return 'hi, ' + this.name;
             };
-            function func2( name ) {
+            function Func2( name ) {
                 this.name = name + '!';
-            };
-            lang.inherits( func2, func1 );
+            }
+            lang.inherits( Func2, Func1 );
 
-            var instance1 = new func1( 'saber' );
-            var instance2 = new func2( 'baidu' );
+            var instance1 = new Func1( 'saber' );
+            var instance2 = new Func2( 'baidu' );
 
             expect( instance1.say() ).toBe( 'hi, saber' );
             expect( instance2.say() ).toBe( 'hi, baidu!' );
