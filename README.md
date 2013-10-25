@@ -31,3 +31,7 @@ require( [ 'saber-lang' ], function( lang ) {
 ### .curry( fn, ...args )
 
 为函数提前绑定前置参数（[柯里化](http://en.wikipedia.org/wiki/Currying)）。
+
+### .bind( fn, thisArg, ...args )
+
+为函数绑定this与前置参数。

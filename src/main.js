@@ -10,7 +10,8 @@ define(function( require ) {
     return {
         inherits: require( './inherits' ),
         extend: require( './extend' ),
-        curry: require( './curry' )
+        curry: require( './curry' ),
+        bind: require( './bind' )
     };
 
 });
