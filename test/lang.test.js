@@ -56,6 +56,16 @@ define(function( require ) {
             expect( instance2.say() ).toBe( 'hi, baidu!' );
         });
 
+        it('.bind( fn, thisArg, ...args )', function () {
+            function foo(age, type) {
+                return this.n + ' ' + age + ' ' + type;
+            }
+
+            expect(foo(200, 'unknow')).toBe('undefined 200 unknow');
+
+            var fn = lang.bind(foo, {n: 'saber'}, 18);
+            expect(fn('queen')).toBe('saber 18 queen');
+        });
     });
 
 });
