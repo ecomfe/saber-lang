@@ -1,6 +1,6 @@
 # saber-lang
 
-适合移动端的**语言增强**模块。
+适合移动端的 **语言增强** 模块。
 
 ## Usage
 
@@ -35,3 +35,7 @@ require( [ 'saber-lang' ], function( lang ) {
 ### .bind( fn, thisArg, ...args )
 
 为函数绑定this与前置参数。
+
+===
+
+[![Saber](https://f.cloud.github.com/assets/157338/1485433/aeb5c72a-4714-11e3-87ae-7ef8ae66e605.png)](http://ecomfe.github.io/saber/)
