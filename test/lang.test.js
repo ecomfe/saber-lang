@@ -7,7 +7,7 @@
 define(function( require ) {
     var lang = require( 'saber-lang' );
 
-    describe( 'Lang', function() {
+    describe( 'lang', function() {
 
         it( '.curry( fn, ...args )', function() {
             function sum( a, b ) {

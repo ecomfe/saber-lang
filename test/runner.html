@@ -3,10 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <title>Jasmine Spec Runner</title>
-        <link rel="stylesheet" href="http://firede.github.io/saber-static/jasmine/1.3.1/jasmine.css">
-        <script src="http://firede.github.io/saber-static/jasmine/1.3.1/jasmine.js"></script>
-        <script src="http://firede.github.io/saber-static/jasmine/1.3.1/jasmine-html.js"></script>
-        <script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/1-6-6/esl.js"></script>
+        <link rel="stylesheet" href="http://saberlabs.github.io/static/jasmine/2.0.0/jasmine.css">
+        <script src="http://saberlabs.github.io/static/jasmine/2.0.0/jasmine.js"></script>
+        <script src="http://saberlabs.github.io/static/jasmine/2.0.0/jasmine-html.js"></script>
+        <script src="http://saberlabs.github.io/static/jasmine/2.0.0/boot.js"></script>
+        <script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/1-6-6/esl.js"></script>  
     </head>
     <body>
         <script>
@@ -20,25 +21,12 @@
             ]
         });
 
-        (function() {
-            var jasmineEnv = jasmine.getEnv();
-            jasmineEnv.updateInterval = 250;
-
-            var htmlReporter = new jasmine.HtmlReporter();
-            jasmineEnv.addReporter(htmlReporter);
-
-            jasmineEnv.specFilter = function(spec) {
-                return htmlReporter.specFilter(spec);
-            };
-
-            require(
-                [ 'lang.test' ],
-                function() {
-                    jasmineEnv.execute();
-                }
-            );
-
-        })();
+        require(
+            [
+                'lang.test',
+                'function.test'
+            ]
+        );
         </script>
     </body>
 </html>
