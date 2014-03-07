@@ -55,4 +55,5 @@ define(function () {
     }
 
     return throttle;
+
 });

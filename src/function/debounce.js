@@ -5,7 +5,7 @@
  * @author zfkun(zfkun@msn.com)
  */
 
-define(function() {
+define(function () {
 
     /**
      * 函数防抖
@@ -13,8 +13,8 @@ define(function() {
      * 
      * @param {Function} fn 执行函数
      * @param {number} wait 需要延迟等待的间隔(毫秒)
-     * @param {} immediate 是否延迟启动前先立即调用执行`fn`
-     * @return {Function} 包装后的函数对象
+     * @param {boolean=} immediate 是否延迟启动前先立即调用执行`fn`
+     * @return {Function} 包装过的新执行函数
      */
     function debounce ( fn, wait, immediate ) {
 
