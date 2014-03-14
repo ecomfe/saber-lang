@@ -13,7 +13,7 @@
     "scripts": {
         "test": "./node_modules/.bin/phantomjs test/run-jasmine.js test/runner.html"
     },
-    "license": "BSD",
+    "license": "MIT",
     "repository": "git://github.com/ecomfe/saber-lang.git",
     "bugs": "https://github.com/ecomfe/saber-lang/issues"
 }
