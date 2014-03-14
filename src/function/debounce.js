@@ -40,7 +40,7 @@ define(function () {
 
         return function () {
             context = this;
-            args = arguments;            
+            args = arguments;
             last = Date.now();
 
             var isCallImmediate = wait <= 0 || immediate && !timer;

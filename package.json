@@ -10,6 +10,9 @@
         { "name": "treelite", "email": "c.xinle@gmail.com" },
         { "name": "zfkun", "email": "zfkun@msn.com" }
     ],
+    "scripts": {
+        "test": "./node_modules/.bin/phantomjs test/run-jasmine.js test/runner.html"
+    },
     "license": "BSD",
     "repository": "git://github.com/ecomfe/saber-lang.git",
     "bugs": "https://github.com/ecomfe/saber-lang/issues"
