@@ -64,6 +64,35 @@ require( [ 'saber-lang' ], function( lang ) {
 + `wait` `{number}` 需要延迟等待的间隔(`毫秒`)
 + `immediate` `{boolean=}` 是否延迟启动前先立即调用执行`fn`
 
+#### aspect.mixin( obj )
+
+为指定对象混入`AOP`功能
+
++ `before`
+
+	```javascript
+	obj.before( method, fn[, context] )
+	```
+
+	在 `obj` 的 `method` 方法调用前，先调用 `fn` 函数
+	
+	* `fn` 执行时的 `形参` 与 `obj[ method ]` 的一致
+	* `context` 指定时，`fn` 的 `this` 指向 `context`
+	* `fn` 返回 `false` 时，`中断`后续的所有调用
+
++ `after`
+
+	```javascript
+	obj.after( method, fn[, context] )
+	```
+
+	在 `obj` 的 `method` 方法调用后，调用 `fn` 函数
+	
+	* `fn` 执行时的 `形参` 与 `obj[ method ]` 的一致
+	* `context` 指定时，`fn` 的 `this` 指向 `context`
+
+
+
 ===
 
 [![Saber](https://f.cloud.github.com/assets/157338/1485433/aeb5c72a-4714-11e3-87ae-7ef8ae66e605.png)](http://ecomfe.github.io/saber/)
