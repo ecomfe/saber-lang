@@ -375,6 +375,30 @@ define(function( require ) {
                 expect( list.join( ',' ) ).toEqual( '1-2,1,2' );
             });
 
+            it( 'should `before` with `context` work correctly', function () {
+                var list = [];
+                var ctx = { name: 'ctx' };
+                var obj = {
+                    name: 'obj',
+                    add: function ( a, b ) {
+                        list.push( this.name, a, b );
+                    }
+                };
+
+                aspect.mixin( obj );
+
+                obj.before( 'add', function ( a, b ) {
+                    list.push( this.name, a + '-' + b );
+                }, ctx );
+
+
+                expect( list.join( ',' ) ).toEqual( '' );
+
+                obj.add( 1, 2 );
+
+                expect( list.join( ',' ) ).toEqual( 'ctx,1-2,obj,1,2' );
+            });
+
             it( 'should `after` work correctly', function () {
                 var list = [];
                 var obj = {
@@ -396,6 +420,30 @@ define(function( require ) {
 
                 expect( list.join( ',' ) ).toEqual( '1,2,1-2' );
             });
+
+            it( 'should `after` with `context` work correctly', function () {
+                var list = [];
+                var ctx = { name: 'ctx' };
+                var obj = {
+                    name: 'obj',
+                    add: function ( a, b ) {
+                        list.push( this.name, a, b );
+                    }
+                };
+
+                aspect.mixin( obj );
+
+                obj.after( 'add', function ( a, b ) {
+                    list.push( this.name, a + '-' + b );
+                }, ctx );
+
+
+                expect( list.join( ',' ) ).toEqual( '' );
+
+                obj.add( 1, 2 );
+
+                expect( list.join( ',' ) ).toEqual( 'obj,1,2,ctx,1-2' );
+            })
 
             it( 'should `before` and `after` work correctly together', function () {
                 var list = [];
