@@ -41,6 +41,32 @@ require( [ 'saber-lang' ], function( lang ) {
 
 为函数绑定this与前置参数。
 
+
+### Type
+
+`Type` 部分是较常用的类型检查方法，需指定完整路径引入 `require('saber-lang/type')`。
+
+#### .type( obj )
+
+获取变量类型。
+
+#### .isFunction( obj )
+
+检测变量是否为函数。
+
+#### .isPlainObject( obj )
+
+检测变量是否为简单对象。
+
+#### .isEmptyObject( obj )
+
+检测变量是否为空的简单对象。
+
+#### .isEmpty( obj )
+
+检测变量是否为空值类型。
+
+
 ### Function
 
 `Function` 类的语言增强函数都需要指定完整路径引入，如 `require('saber-lang/function/throttle')`。
@@ -90,7 +116,6 @@ require( [ 'saber-lang' ], function( lang ) {
 	
 	* `fn` 执行时的 `形参` 与 `obj[ method ]` 的一致
 	* `context` 指定时，`fn` 的 `this` 指向 `context`
-
 
 
 ===
