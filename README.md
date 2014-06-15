@@ -48,11 +48,17 @@ require( [ 'saber-lang' ], function( lang ) {
 
 #### .type( obj )
 
-获取变量类型。
+获取变量类型。支持的返回值:
 
-#### .isFunction( obj )
-
-检测变量是否为函数。
+* `boolean`
+* `number`
+* `string`
+* `function`
+* `array`
+* `date`
+* `regexp`
+* `object`
+* `error`
 
 #### .isPlainObject( obj )
 
@@ -64,7 +70,7 @@ require( [ 'saber-lang' ], function( lang ) {
 
 #### .isEmpty( obj )
 
-检测变量是否为空值类型。
+检测变量是否为空值类型。 注: `{}`、`[]` 也属于空值类型。
 
 
 ### Function

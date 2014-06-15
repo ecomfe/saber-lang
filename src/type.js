@@ -51,17 +51,6 @@ define( function ( require ) {
     };
 
     /**
-     * 检测变量是否为函数
-     *
-     * @public
-     * @param {*} obj 目标变量
-     * @return {boolean}
-     */
-    exports.isFunction = function ( obj ) {
-        return 'function' === exports.type( obj );
-    };
-
-    /**
      * 检测变量是否为简单对象
      *
      * @public

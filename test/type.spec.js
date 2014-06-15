@@ -44,24 +44,6 @@ define( function ( require ) {
 
         });
 
-        describe( '.isFunction', function () {
-
-            it( 'should exists', function () {
-                expect( typeof type.isFunction ).toEqual( 'function' );
-            });
-
-            it( 'should return `true` if passed', function () {
-                expect( type.isFunction( function () {} ) ).toBe( true );
-                expect( type.isFunction( window.scrollTo ) ).toBe( true );
-            });
-
-            it( 'should return `false` if not passed', function () {
-                expect( type.isFunction( document ) ).toBe( false );
-                expect( type.isFunction( 'hello' ) ).toBe( false );
-            });
-
-        });
-
         describe( '.isPlainObject', function () {
 
             it( 'should exists', function () {
