@@ -5,7 +5,7 @@
  * @author zfkun(zfkun@msn.com)
  */
 
-define( function ( require ) {
+define(function (require) {
 
     /**
      * type
@@ -29,10 +29,10 @@ define( function ( require ) {
     'Boolean Number String Function Array Date RegExp Object Error'
     .split(' ')
     .forEach(
-        function ( name ) {
+        function (name) {
             class2type[ '[object ' + name + ']' ] = name.toLowerCase();
         }
-    );
+   );
 
 
 
@@ -43,11 +43,11 @@ define( function ( require ) {
      * @param {*} obj 目标变量
      * @return {string} 类型名
      */
-    exports.type = function ( obj ) {
+    exports.type = function (obj) {
         // 为节省对比次数这里使用 `==`, 比如 `undefined`, `null`
         return obj == null
-            ? String( obj )
-            : class2type[ class2type.toString.call( obj ) ] || 'object';
+            ? String(obj)
+            : class2type[ class2type.toString.call(obj) ] || 'object';
     };
 
     /**
@@ -57,8 +57,8 @@ define( function ( require ) {
      * @param {*} obj 目标变量
      * @return {boolean}
      */
-    exports.isPlainObject = function ( obj ) {
-        return 'object' === exports.type( obj ) && Object.getPrototypeOf( obj ) === Object.prototype;
+    exports.isPlainObject = function (obj) {
+        return 'object' === exports.type(obj) && Object.getPrototypeOf(obj) === Object.prototype;
     };
 
     /**
@@ -68,13 +68,13 @@ define( function ( require ) {
      * @param {*} obj 目标变量
      * @return {boolean}
      */
-    exports.isEmptyObject = function ( obj ) {
-        if ( 'object' !== exports.type( obj ) ) {
+    exports.isEmptyObject = function (obj) {
+        if ('object' !== exports.type(obj)) {
             return false;
         }
 
         var key;
-        for ( key in obj ) {
+        for (key in obj) {
             return false;
         }
 
@@ -89,15 +89,15 @@ define( function ( require ) {
      * @param {*} obj 目标变量
      * @return {boolean}
      */
-    exports.isEmpty = function ( obj ) {
+    exports.isEmpty = function (obj) {
         return null === obj
             || undefined === obj
             || '' === obj
-            || ( Array.isArray( obj ) && 0 === obj.length )
-            || exports.isEmptyObject( obj );
+            || (Array.isArray(obj) && 0 === obj.length)
+            || exports.isEmptyObject(obj);
     };
 
 
     return exports;
 
-} );
+});
