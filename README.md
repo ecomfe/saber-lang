@@ -3,11 +3,13 @@ saber-lang [![Build Status](https://travis-ci.org/ecomfe/saber-lang.png)](https:
 
 适合移动端的 **语言增强** 模块。
 
-## Usage
+## Installation
 
 通过 `edp` 引入模块：
 
     edp import saber-lang
+
+## Usage
 
 ```javascript
 require( [ 'saber-lang' ], function( lang ) {
@@ -25,28 +27,48 @@ require( [ 'saber-lang' ], function( lang ) {
 
 `Base` 部分是最基础的语言增强函数，在 `require('saber-lang')` 时加载。
 
-#### .extend( target, ...source )
+### Methods
+
+#### extend( target, ...source )
 
 对象属性拷贝。
 
-#### .inherits( subClass, superClass )
+* **target** `{Object}` 目标对象
+* **source** `{...Object}` 源对象
+* _return_ `{Object}`
+
+#### inherits( subClass, superClass )
 
 为类型构造器建立继承关系。
 
-#### .curry( fn, ...args )
+* **subClass** `{Function}` 子类构造器
+* **superClass** `{Function}` 父类构造器
+* _return_ `{Function}`
+
+#### curry( fn[, ...args] )
 
 为函数提前绑定前置参数（[柯里化](http://en.wikipedia.org/wiki/Currying)）。
 
-#### .bind( fn, thisArg, ...args )
+* **fn** `{Function}` 要绑定的函数
+* **args** `{...*=}` 函数执行时附加到执行时函数前面的参数
+* _return_ `{Function}`
+
+#### bind( fn, thisArg[, ...args] )
 
 为函数绑定this与前置参数。
 
+* **fn**  `{Function}` 要绑定的函数
+* **thisArg** `{Object}` 需要绑定的this
+* **args** `{...*=}` 函数执行时附加的前置绑定参数
+* _return_ `{Function}`
 
 ### Type
 
 `Type` 部分是较常用的类型检查方法，需指定完整路径引入 `require('saber-lang/type')`。
 
-#### .type( obj )
+### Methods
+
+#### type( obj )
 
 获取变量类型。支持的返回值:
 
@@ -60,15 +82,15 @@ require( [ 'saber-lang' ], function( lang ) {
 * `object`
 * `error`
 
-#### .isPlainObject( obj )
+#### isPlainObject( obj )
 
 检测变量是否为简单对象。
 
-#### .isEmptyObject( obj )
+#### isEmptyObject( obj )
 
 检测变量是否为空的简单对象。
 
-#### .isEmpty( obj )
+#### isEmpty( obj )
 
 检测变量是否为空值类型。 注: `{}`、`[]` 也属于空值类型。
 
@@ -77,24 +99,26 @@ require( [ 'saber-lang' ], function( lang ) {
 
 `Function` 类的语言增强函数都需要指定完整路径引入，如 `require('saber-lang/function/throttle')`。
 
-#### .throttle( fn, wait [, options] )
+### Methods
+
+#### throttle( fn, wait [, options] )
 
 函数节流 (忽略指定间隔内的函数调用)。
 
-+ fn `{Function}` 执行函数
-+ wait `{number}` 下次执行前需等待的 `毫秒` 数(即 `节流阀值` )
-+ options `{Object=}` 配置对象
++ **fn** `{Function}` 执行函数
++ **wait** `{number}` 下次执行前需等待的 `毫秒` 数(即 `节流阀值` )
++ **options** `{Object=}` 配置对象
     + options.leading `{boolean=}` 是否首次立即执行一次 `fn`, 默认 `true`
     + options.trailing `{boolean=}` 是否停止后延迟执行一次 `fn`, 默认 `true`
     + options.context `{*=}` `fn` 执行时的上下文环境, 默认 `this`
 
-#### .debounce( fn, wait [, immediate] )
+#### debounce( fn, wait [, immediate] )
 
 函数去抖 (指定间隔内的调用被延迟到下个间隔执行)。
 
-+ fn `{Function}` 执行函数
-+ wait `{number}` 需要延迟等待的间隔( `毫秒` )
-+ immediate `{boolean=}` 是否延迟启动前先立即调用执行 `fn`
++ **fn** `{Function}` 执行函数
++ **wait** `{number}` 需要延迟等待的间隔( `毫秒` )
++ **immediate** `{boolean=}` 是否延迟启动前先立即调用执行 `fn`
 
 #### aspect.mixin( obj )
 
@@ -122,8 +146,3 @@ require( [ 'saber-lang' ], function( lang ) {
 
     * `fn` 执行时的 `形参` 与 `obj[ method ]` 的一致
     * `context` 指定时，`fn` 的 `this` 指向 `context`
-
-
-===
-
-[![Saber](https://f.cloud.github.com/assets/157338/1485433/aeb5c72a-4714-11e3-87ae-7ef8ae66e605.png)](http://ecomfe.github.io/saber/)
