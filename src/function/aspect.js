@@ -1,6 +1,6 @@
 /**
  * saber-lang
- * 
+ *
  * @file aspect
  * @author zfkun(zfkun@msn.com)
  */
@@ -24,8 +24,8 @@ define(function () {
      * @param {*} context `fn`调用时的上下文
      * @returns {Object} 目标对象
      */
-    Aspect.before = function ( method, fn, context ) {
-        return aspectTo( this, 'before', method, fn, context );
+    Aspect.before = function (method, fn, context) {
+        return aspectTo(this, 'before', method, fn, context);
     };
 
     /**
@@ -37,8 +37,8 @@ define(function () {
      * @param {*} context `fn`调用时的上下文
      * @returns {Object} 目标对象
      */
-    Aspect.after = function ( method, fn, context ) {
-        return aspectTo( this, 'after', method, fn, context );
+    Aspect.after = function (method, fn, context) {
+        return aspectTo(this, 'after', method, fn, context);
     };
 
 
@@ -53,22 +53,22 @@ define(function () {
      * @param {*} context `fn`调用时的上下文
      * @returns {Object} 目标对象
      */
-    function aspectTo ( target, type, method, fn, context ) {
+    function aspectTo(target, type, method, fn, context) {
         var oriMethod = target[ method ];
 
-        if ( oriMethod ) {
-            if ( type === 'before' ) {
+        if (oriMethod) {
+            if (type === 'before') {
                 target[ method ] = function () {
                     // abort support
-                    if ( fn.apply( context || fn, arguments ) !== false ) {
-                        oriMethod.apply( this, arguments );
+                    if (fn.apply(context || fn, arguments) !== false) {
+                        oriMethod.apply(this, arguments);
                     }
                 };
             }
-            else if ( type === 'after' ) {
+            else if (type === 'after') {
                 target[ method ] = function () {
-                    oriMethod.apply( this, arguments );
-                    fn.apply( context || fn, arguments );
+                    oriMethod.apply(this, arguments);
+                    fn.apply(context || fn, arguments);
                 };
             }
         }
@@ -92,9 +92,9 @@ define(function () {
      * @param {Object} obj 目标对象
      * @returns {Object} 混入 `Aspect` 后的目标对象
      */
-    exports.mixin = function ( obj ) {
+    exports.mixin = function (obj) {
         // 省略了 hasOwnProperty 校验
-        for ( var method in Aspect ) {
+        for (var method in Aspect) {
             obj[ method ] = Aspect[ method ];
         }
         return obj;

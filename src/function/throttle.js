@@ -1,6 +1,6 @@
 /**
  * saber-lang
- * 
+ *
  * @file throttle
  * @author zfkun(zfkun@msn.com)
  */
@@ -10,7 +10,7 @@ define(function () {
     /**
      * 函数节流
      * 忽略指定间隔内的函数调用
-     * 
+     *
      * @param {Function} fn 执行函数
      * @param {number} wait 下次执行前需等待的毫秒数(即节流阀值)
      * @param {Object=} options 配置项
@@ -19,7 +19,7 @@ define(function () {
      * @param {*=} options.context `fn`执行时的上下文环境, 默认`this`
      * @return {Function} 包装过的新执行函数
      */
-    function throttle ( fn, wait, options ) {
+    function throttle(fn, wait, options) {
         options = options || {};
 
         var context;
@@ -29,7 +29,7 @@ define(function () {
 
         var task = function () {
             last = options.leading === false ? 0 : Date.now();
-            fn.apply( options.context || context, args );
+            fn.apply(options.context || context, args);
         };
 
         return function () {
@@ -38,18 +38,18 @@ define(function () {
 
             var now = Date.now();
 
-            if ( !last && options.leading === false ) {
+            if (!last && options.leading === false) {
                 last = now;
             }
 
-            var remaining = wait - ( now - last );
-            if ( remaining <= 0 || remaining > wait ) {
-                timer = clearTimeout( timer );
+            var remaining = wait - (now - last);
+            if (remaining <= 0 || remaining > wait) {
+                timer = clearTimeout(timer);
                 last = now;
-                fn.apply( options.context || context, args );
+                fn.apply(options.context || context, args);
             }
-            else if ( !timer && options.trailing !== false ) {
-                timer = setTimeout( task, remaining );
+            else if (!timer && options.trailing !== false) {
+                timer = setTimeout(task, remaining);
             }
         };
     }
