@@ -30,7 +30,7 @@ define(function (require) {
     .split(' ')
     .forEach(
         function (name) {
-            class2type[ '[object ' + name + ']' ] = name.toLowerCase();
+            class2type['[object ' + name + ']'] = name.toLowerCase();
         }
    );
 
@@ -47,7 +47,7 @@ define(function (require) {
         // 为节省对比次数这里使用 `==`, 比如 `undefined`, `null`
         return obj == null
             ? String(obj)
-            : class2type[ class2type.toString.call(obj) ] || 'object';
+            : class2type[class2type.toString.call(obj)] || 'object';
     };
 
     /**
@@ -73,8 +73,7 @@ define(function (require) {
             return false;
         }
 
-        var key;
-        for (key in obj) {
+        if (Object.keys(obj).length) {
             return false;
         }
 

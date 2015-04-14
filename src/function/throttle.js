@@ -30,6 +30,7 @@ define(function () {
         var task = function () {
             last = options.leading === false ? 0 : Date.now();
             fn.apply(options.context || context, args);
+            timer = null;
         };
 
         return function () {

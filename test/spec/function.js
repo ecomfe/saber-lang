@@ -240,6 +240,37 @@ define(function(require) {
                 }, 64);
             });
 
+            it('should delay call `fn` when `options.trailing` is true', function (done) {
+                var i = 0;
+                function add() {
+                    i++;
+                }
+
+                var addThrottle = throttle(add, 30, {trailing: true});
+                
+                addThrottle();
+                addThrottle();
+                addThrottle();
+
+                expect(i).toBe(1);
+
+                var time = Date.now();
+                setTimeout(function () {
+                    expect(i).toBe(2);
+
+                    addThrottle();
+                    expect(i).toBe(2);
+                    addThrottle();
+
+                    setTimeout(function () {
+                        expect(i).toBe(3);
+                        done();
+                    }, 100);
+
+                }, 30);
+
+            });
+
         });
 
         describe('.debounce', function () {
