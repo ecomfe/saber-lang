@@ -5,7 +5,7 @@
  * @author  firede[firede@firede.us]
  */
 
-define(function() {
+define(function () {
 
     /**
      * 对象属性拷贝
