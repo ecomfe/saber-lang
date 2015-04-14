@@ -21,7 +21,9 @@ define(function () {
         var proto = subClass.prototype = new Empty();
 
         for (var key in selfPrototype) {
-            proto[key] = selfPrototype[key];
+            if (selfPrototype.hasOwnProperty(key)) {
+                proto[key] = selfPrototype[key];
+            }
         }
         subClass.prototype.constructor = subClass;
 
