@@ -3,24 +3,32 @@ saber-lang
 
 ![Bower version](https://img.shields.io/bower/v/saber-lang.svg?style=flat-square) [![NPM version](https://img.shields.io/npm/v/saber-lang.svg?style=flat-square)](https://npmjs.org/package/saber-lang) [![Build Status](https://img.shields.io/travis/ecomfe/saber-lang.svg?style=flat-square)](https://travis-ci.org/ecomfe/saber-lang) [![License](https://img.shields.io/npm/l/saber-lang.svg?style=flat-square)](./LICENSE) [![EFE Mobile Team](https://img.shields.io/badge/EFE-Mobile_Team-blue.svg?style=flat-square)](http://efe.baidu.com)
 
-适合移动端的 **语言增强** 模块。
+适合移动端 &nbsp; node 环境的 **语言增强** 模块。
 
 ## Installation
 
-通过 `edp` 引入模块：
+浏览器环境下，通过 `edp` 引入模块：
 
-    edp import saber-lang
+```sh
+$ edp import saber-lang
+```
+
+node 环境下，通过 `npm` 引入模块：
+
+```sh
+$ npm install saber-lang --save
+```
 
 ## Usage
 
 ```js
-require(['saber-lang'], function(lang) {
-    var targetObj = {x: 1, y: 2};
-    var sourceObj = {y: 3, z: 4};
-    lang.extend(targetObj, sourceObj);
+var lang = require('saber-lang');
 
-    console.log(targetObj); // {x: 1, y: 3, z: 4}
-});
+var targetObj = {x: 1, y: 2};
+var sourceObj = {y: 3, z: 4};
+lang.extend(targetObj, sourceObj);
+
+console.log(targetObj); // {x: 1, y: 3, z: 4}
 ```
 
 ## API
@@ -64,7 +72,7 @@ require(['saber-lang'], function(lang) {
 
 ### Optional
 
-可选模块使用时需要单独引用。
+在 **浏览器环境下** 还提供以下可选模块，使用时需要单独引用。
 
 * [Type](./doc/type.md)
 * [Function](./doc/function.md)
