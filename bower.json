@@ -1,6 +1,6 @@
 {
   "name": "saber-lang",
-  "version": "1.0.2",
+  "version": "2.0.0-beta.1",
   "description": "适合移动端的语言增强模块，提供了extend, inherits, curry等函数。",
   "main": "main",
   "maintainers": [
