@@ -54,6 +54,13 @@ define(function(require) {
 
             expect(instance1.say()).toBe('hi, saber');
             expect(instance2.say()).toBe('hi, baidu!');
+
+            expect(instance1.constructor).toBe(Func1);
+            expect(instance2.constructor).toBe(Func2);
+
+            expect(instance1 instanceof Func1).toBeTruthy();
+            expect(instance2 instanceof Func2).toBeTruthy();
+            expect(instance2 instanceof Func1).toBeTruthy();
         });
 
         it('.bind(fn, thisArg, ...args)', function () {
