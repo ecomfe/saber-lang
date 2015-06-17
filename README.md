@@ -1,5 +1,7 @@
-saber-lang [![Build Status](https://travis-ci.org/ecomfe/saber-lang.png)](https://travis-ci.org/ecomfe/saber-lang)
+saber-lang
 ===
+
+![Bower version](https://img.shields.io/bower/v/saber-lang.svg?style=flat-square) [![NPM version](https://img.shields.io/npm/v/saber-lang.svg?style=flat-square)](https://npmjs.org/package/saber-lang) [![Build Status](https://img.shields.io/travis/ecomfe/saber-lang.svg?style=flat-square)](https://travis-ci.org/ecomfe/saber-lang) [![License](https://img.shields.io/npm/l/saber-ajax.svg?style=flat-square)](./LICENSE) [![EFE Mobile Team](https://img.shields.io/badge/EFE-Mobile_Team-blue.svg?style=flat-square)](http://efe.baidu.com)
 
 适合移动端的 **语言增强** 模块。
 
