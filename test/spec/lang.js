@@ -16,6 +16,7 @@ define(function(require) {
             var sumCurry = lang.curry(sum, 1);
 
             expect(sum(1, 2)).toBe(sumCurry(2));
+            expect(sum(1, 5)).toBe(sumCurry(5));
         });
 
         it('.extend(target, source)', function() {
